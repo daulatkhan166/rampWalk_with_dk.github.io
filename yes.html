@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ask Expression</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="ask">
+      <h2>Task that I want you to do!</h2>
+      <button id="whatsapp-btn">Send Message</button>
+    </div>
+  </div>
+  <script>
+    // Get the WhatsApp button element
+    const whatsappBtn = document.getElementById("whatsapp-btn");
+
+    // Add a click event listener to the button
+    whatsappBtn.addEventListener("click", function() {
+      // Specify your WhatsApp number
+      const phoneNumber = "7987463881";
+
+      // Specify the fixed message
+      const fixedMessage = "then I will go with you on a ramp walk.";
+
+      // Prompt the user to enter a message
+      const userMessage = prompt("Enter your message:");
+
+      // Combine the fixed message and the user's message with a space in between
+      const message = `${userMessage} ${fixedMessage}`;
+
+      // Create the WhatsApp URL with the specified phone number and message
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+      // Redirect to the WhatsApp URL
+      window.location.href = whatsappUrl;
+    });
+  </script>
+</body>
+</html>
